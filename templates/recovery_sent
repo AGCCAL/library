@@ -1,0 +1,29 @@
+<html>
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="css/garden.css" />
+<link rel="stylesheet" href="css/login.css" />
+<title>Forgot your password?</title>
+</head>
+<body>
+
+<div class="banner">
+<a href="./"><img src="img/logo.png" class="logo" /></a>
+</div>
+
+
+<div class="centre">
+<h1>Please check your email</h1>
+We have sent an email containing recovery instructions to the email address
+associated with this account.
+<br/><br/>
+<b>Please allow at least ten minutes for the password reset to be emailed to you before requesting another password reset.</b>
+<br/><br/>
+Please ensure that you are using the email address that you used to create your account when requesting a password reset.
+<br/><br/> 
+If you continue to have trouble logging in, please email the Canadian Centre for Advanced Leadership in Business (CCAL) at the University of Calgary at <a href="mailto:leadership@haskayne.ucalgary.ca">leadership@haskayne.ucalgary.ca</a> AND <a href="joan.bassett@haskayne.ucalgary.ca">joan.bassett@haskayne.ucalgary.ca</a>.  We will respond within one business day of receiving your request.
+</div>
+<script type="text/javascript" src="js/retina.min.js"></script>
+</body>
+</html>
+

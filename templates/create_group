@@ -1,0 +1,106 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="css/garden.css" />
+    <link rel="stylesheet" href="css/admin.css" />
+    <link rel="stylesheet" href="css/group_admin.css" />
+    <link rel="stylesheet" href="css/alert.css" />
+    <script type="text/javascript" src="js/admin.js"></script>
+    <script type="text/javascript" src="js/group_admin.js"></script>
+    <script type="text/javascript" src="js/alert.js"></script>
+    <title>Create a new group</title>
+  </head>
+  <body onload="javascript:on_load();">
+
+    {{{banner}}}
+
+    <div class="centre">
+      <div class="questionnaire">
+        <div class="questionnaire-introduction">
+          <h1>Create a new group</h1>
+        </div>
+
+        <div id="questionnaire-submit">
+
+
+          <div id="group">
+            <form id="group_form" action="group-create" method="post" accept-charset="UTF-8">
+
+              <p>
+              Enter the name of the group.
+              </p>
+              <input type="text" name="name" placeholder="Group name" style="width:50em;"></input>
+
+              <p>
+              Select a parent group for this group, or leave it blank to make a top-level group.
+              </p>  
+              <select class="answer-type" id="parent" name="parent">
+              {{#parent_group_list}}
+              <option value="{{group_id}}"{{selected_or_nothing}}>{{name}}</option>
+              {{/parent_group_list}}
+              </select>
+              <input type="checkbox" id="is_admin_group" name="is_admin_group">Check if this group contains administrators for its parent.</input>
+
+              <p>
+              Choose assessments that will be visible to this group:
+              </p>
+            
+              <div class="all-drag-items-headers">
+                <div class="drag-items-header">Not Included</div>
+                <div class="drag-items-header" style="left:50%;">Included</div>
+              </div>
+              <div class="all-drag-items" id="all_assessments">
+                <div class="drag-items-body">
+                  <div id="available_assessments" class="available drag-items" ondrop="drop(event, 'assessments', 'assessment', 'all_assessments')" ondragover="allowDrop(event)">
+                    
+                    {{#available_assessments}}
+                    <div id="assessment{{assessment_id}}" class="drag-item" ondragstart="drag(event);" draggable="true" ondrop="dropInParent(event, 'assessments', 'assessment', 'all_assessments')" ondragover="allowDrop(event)">{{{name}}}</div>
+                    {{/available_assessments}}
+                  </div>
+                  <div id="chosen_assessments" class="chosen drag-items" ondrop="drop(event, 'assessments', 'assessment', 'all_assessments')" ondragover="allowDrop(event)">
+                    {{#chosen_assessments}}
+                    <div id="assessment{{assessment_id}}" class="drag-item" ondragstart="drag(event);" draggable="true" ondrop="dropInParent(event, 'assessments', 'assessment', 'all_assessments')" ondragover="allowDrop(event)">{{{name}}}</div>
+                    {{/chosen_assessments}}
+                  </div>
+                </div>
+              </div>
+
+
+              <p>
+              Choose users who will be members of this group:
+              </p>
+
+              <div class="all-drag-items-headers">
+                <div class="drag-items-header">Non-members</div>
+                <div class="drag-items-header" style="left:50%;">Members</div>
+              </div>
+              <div class="all-drag-items" id="all_users">
+                <div class="drag-items-body">
+                  <div id="available_users" class="available drag-items" ondrop="drop(event, 'users', 'user', 'all_users')" ondragover="allowDrop(event)">
+                    {{#available_users}}
+                    <div id="user{{user_id}}" class="drag-item" ondragstart="drag(event);" draggable="true" ondrop="dropInParent(event, 'users', 'user', 'all_users')" ondragover="allowDrop(event)">{{{real_name}}} ({{{user_name}}})<br/>{{{email}}}</div>
+                    {{/available_users}}
+                  </div>
+                  <div id="chosen_users" class="chosen drag-items" ondrop="drop(event, 'users', 'user', 'all_users')" ondragover="allowDrop(event)">
+                    {{#chosen_users}}
+                    <div id="user{{user_id}}" class="drag-item" ondragstart="drag(event);" draggable="true" ondrop="dropInParent(event, 'users', 'user', 'all_users')" ondragover="allowDrop(event)">{{{real_name}}} ({{{user_name}}})<br/>{{{email}}}</div>
+                    {{/chosen_users}}
+                  </div>
+                </div>
+              </div>
+              
+              <br/><br/>
+              <button type="submit" class="questionnaire-submit">Create</button>
+              <br/><br/>
+              
+              <input type="hidden" id="magic" name="magic" value="{{magic}}">
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="js/retina.min.js"></script>
+  </body>
+</html>
+

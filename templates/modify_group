@@ -1,0 +1,34 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="css/garden.css" />
+    <link rel="stylesheet" href="css/admin.css" />
+    <link rel="stylesheet" href="css/group_admin.css" />
+    <link rel="stylesheet" href="css/alert.css" />
+    <script type="text/javascript" src="js/admin.js"></script>
+    <script type="text/javascript" src="js/group_admin.js"></script>
+    <script type="text/javascript" src="js/alert.js"></script>
+
+    <title>Modify a group</title>
+  </head>
+  <body onload="javascript:on_load();">
+
+    {{{banner}}}
+
+    <div class="centre">
+      <div class="questionnaire">
+        <div class="questionnaire-introduction">
+          <h1>Modify a group</h1>
+        </div>
+
+        <div id="questionnaire-submit">
+          {{{output}}}
+        </div>
+      </div>
+    </div>
+    
+    
+    <script type="text/javascript" src="js/retina.min.js"></script>
+  </body>
+</html>
+

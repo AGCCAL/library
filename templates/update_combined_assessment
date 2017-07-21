@@ -1,0 +1,44 @@
+<form id="combined_form" action="assessment-update" method="post" accept-charset="UTF-8">
+
+<h2>Assessment name</h2>
+<input type="text" value="{{{name}}}" id="name" name="name" /></td>
+
+<h2>Introduction</h2>
+<textarea id="introduction" name="introduction" rows="10" cols="80" wrap="hard">{{{introduction}}}</textarea>
+
+<h2>Summary heading</h2>
+<textarea id="summary" name="summary" rows="10" cols="80" wrap="hard">{{{summary}}}</textarea>
+
+<h2>Summary footer</h2>
+<textarea id="summary2" name="summary2" rows="10" cols="80" wrap="hard">{{{summary2}}}</textarea>
+
+<div class="all-drag-items-headers">
+    <div class="drag-items-header">Available</div>
+    <div class="drag-items-header" style="left:50%;">Selected</div>
+</div>
+<div class="all-drag-items" id="all_subs">
+  <div class="drag-items-body">
+    <div id="available_subs" class="available drag-items" ondrop="drop(event, 'subs', 'sub', 'all_subs')" ondragover="allowDrop(event)">
+    {{#available_subs}}
+      <div id="sub{{sub_id}}" class="drag-item" ondragstart="drag(event);" draggable="true" ondrop="dropInParent(event, 'subs', 'sub', 'all_subs')" ondragover="allowDrop(event)">{{sub_id}}: {{{sub_name}}}</div>
+    {{/available_subs}}
+    </div>
+    <div id="chosen_subs" class="chosen drag-items" ondrop="drop(event, 'subs', 'sub', 'all_subs')" ondragover="allowDrop(event)">
+    {{#chosen_subs}}
+      <div id="sub{{sub_id}}" class="drag-item" ondragstart="drag(event);" draggable="true" ondrop="dropInParent(event, 'subs', 'sub', 'all_subs')" ondragover="allowDrop(event)">{{sub_id}}: {{{sub_name}}}</div>
+    {{/chosen_subs}}
+    </div>
+  </div>
+<div>
+
+<pre>
+{{{debug}}}
+</pre>
+<input type="hidden" id="a" name="a" value="{{a}}">
+<input type="hidden" id="assessment_type" name="assessment_type" value="2">
+<input type="hidden" id="magic" name="magic" value="{{magic}}">
+<input type="hidden" id="utf8" name="utf8" value="&#x2713;">
+<br/><br/>
+<button type="submit" class="questionnaire-submit">Save</button>
+<br/><br/>
+</form>

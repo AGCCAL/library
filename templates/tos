@@ -1,0 +1,124 @@
+<html>
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="css/garden.css" />
+<link rel="stylesheet" href="css/alert.css" />
+<script type="text/javascript" src="js/alert.js"></script>
+
+<title>{{&name}}</title>
+</head>
+<body>
+
+
+{{{banner}}}
+
+<div class="centre">
+<div class="tos">
+
+<h1>Informed Consent</h1>
+<div style="max-height:400px;overflow:scroll;border:1px solid rgb(130,195,65);padding:5px;">
+<p align="center" style="text-align:center"><b><u><span style="font-size:14.0pt">Informed Consent</span></u></b></p>
+<p><b>Name of Researcher, Faculty, Department, Telephone &amp; Email</b>: </p>
+<p style="margin-bottom:0in;margin-bottom:.0001pt">Tunde Ogunfowora, Ph.D., Haskayne School of Business.
+</p>
+<p style="margin-bottom:0in;margin-bottom:.0001pt">Phone: 1 (403) 220-8352 </p>
+<p style="margin-bottom:0in;margin-bottom:.0001pt">Email: togunfow@ucalgary.ca
+</p>
+<p style="margin-bottom:0in;margin-bottom:.0001pt">&nbsp;</p>
+<p style="margin-bottom:0in;margin-bottom:.0001pt"><b>Title of Project: </b></p>
+<p>A longitudinal Study of Individual Differences, Student Leadership, and Academic Learning
+</p>
+<p><b>Sponsor: </b></p>
+<p>Canadian Center for Advanced Leadership in Business, Haskayne School of Business</p>
+<hr />
+<p>This consent form, a copy of which has been given to you, is only part of the process of informed consent. If you want more details about something mentioned here, or information not included here, you should feel free to ask. Please take the time to read
+this carefully and to understand any accompanying information. </p>
+<p>The University of Calgary Conjoint Faculties Research Ethics Board has approved this study.
+</p>
+<p><b>Purpose of the Study:</b></p>
+<p>The purpose of this study is to understand factors that contribute to student learning success at the Haskayne School of Business.
+Specifically, this research seeks to examine whether student personal characteristics (e.g., personality, ability, cognitions, motivation) and contextual factors (e.g., instruction style, resource availability) influence academic learning
+criteria. These criteria may include (but are not limited to) academic grades, skill development, learning effectiveness, class attendance, student leadership, and ultimately, on-the-job performance and leadership in the workplace (i.e., post-graduation).
+The ultimate outcome of this research is to identify a select group of factors &mdash; and associated assessment tools &mdash; that are useful for understanding the academic success of Haskayne business students. These can then be integrated into our student learning
+enhancement program. As such, this is a long-term research endeavor that requires the involvement of Haskayne Business students at different times (e.g., annually) during the course of their education at Haskayne, as well as after graduation.
+</p>
+<p><b>What Will I Be Asked To Do?</b></p>
+<p>At the start of each school year, the Haskayne School of Business hosts a variety of activities and programs for new students during orientation week. One of these activities is the student
+<span lang="EN-CA">learning enhancement seminar </span>where students learn about themselves and the business school. A key component of this seminar is the completion of self-awareness questionnaires designed to provide you with feedback about certain qualities
+that may relate to your academic success, such as your learning style, motivation, and personality. You will be invited to voluntarily participate in a research study that uses the data you provide to help us better refine our understanding of student success
+factors at Haskayne. Thereafter, we will routinely (e.g., annually) invite you to complete short surveys of your learning experiences as you progress through your degree program. These short surveys may include questions about your study habits, motivation,
+grade goals, your perceived learning effectiveness, and knowledge/skill development. In addition, we will ask for your permission to access information from your classes to further evaluate your success. These may include course grades, class involvement/participation
+evaluations, student leadership evaluations, and teamwork evaluations as rated by your instructors and/or peers (when available). Lastly, we are interested in understanding how student learning experiences at Haskayne translate to success after graduation
+(i.e., on-the-job and career successes). Hence, we will also periodically follow up with you after graduation to survey your post-graduation experiences and successes on the job (e.g., your job performance effectiveness, advancements and promotions, leadership
+at work). Please know that participation in this study is voluntary and you may withdraw at any time. In addition, agreeing to participate in any one of the survey administrations does not automatically imply consent to participate at other time points. In
+other words, you are free to choose which, if any, of the surveys you wish to participate in over time.</p>
+<p><b>What Type of Personal Information Will Be Collected?</b></p>
+<p>On the surveys, we will typically ask for your name, student ID, and email address. Your student ID number is necessary in order to obtain your course grades and other course-specific information at the end of each school year. It is also important to match
+the surveys that you complete at different time points. Your email will be used to contact you before attempting to obtain sensitive information such as course grades. You will be given the option to opt out of the study. All of the information collected will
+only be analyzed at the group level, and will not be used to trace responses back to a specific individual. However, if you feel uncomfortable providing any specific information, you are not required to do so.
+</p>
+<p>Any identifying information can only be accessed by the research assistant who will be trained on confidentiality matters to guard against unethical disclosure of student information to anyone including your instructors, administrators of the school, and
+your peers. The research assistant will give you a unique identifier (separate from your student ID) that will appear in the datasets forwarded to the primary researcher.
+</p>
+<p><b>Are there Risks or Benefits if I Participate?</b></p>
+<p>There are no known risks associated with participating in this study. <span style="background:yellow">
+You may decline to answer any questions or decline to participate in all or parts of the study. Your decision to participate (or not) in this research will have no bearing on your course grades nor will you be treated differently while completing your degree
+program.</span> You will receive information about your personal characteristics (e.g., learning styles) that may be helpful for better understanding yourself and how you are likely to function in a learning environment.</p>
+<p><span style="background:yellow">The online survey is being administered using a variety of software tools. If the online survey is administered by Qualtrics, an American software company, your responses are subject to U.S. laws, including the USA
+PATRIOT Act. The risks associated with participation are minimal, however, and similar to those associated with many e-mail programs, such as Hotmail and social utilities spaces, such as Facebook and MySpace. If the online survey is administered by Assessment
+Garden your responses are subject to Canadian laws.</span></p>
+<p><b>What Happens to the Information I Provide?</b></p>
+<p>Participation in this study is completely voluntary, and your responses will be kept anonymous and confidential. You may withdraw from participation at any time by notifying the primary researcher or designated research assistant.</p>
+<p>The responses provided in the questionnaire will be kept in a locked filing cabinet and in protected computer files at the Haskayne School of Business. Only the research team will have access to this raw data. All information you provide is considered confidential.
+You may request to have your data destroyed should you choose to withdraw from the study at any time. This data will be used with the objective of enhancing the Haskayne education experience and the findings may be presented in the form of journal publications
+and academic presentations. </p>
+<p>Please indicate one of these two choices available below.</p>
+
+<p><b><span lang="EN-CA">Consent Statement</span></b></p>
+<p><span lang="EN-CA">By selecting &ldquo;I agree&rdquo;, you are consenting to participate in this study.</span></p>
+<p><span lang="EN-CA">By completing the surveys, you are indicating that you 1) understand to your satisfaction the information provided to you about your participation in this research and 2) agree to participate as a research subject. In no way does this
+waive your legal rights nor release the investigators, sponsors, or involved institutions from their legal and professional responsibilities. You are free to withdraw from this research at any time. Feel free to ask for clarification or new information throughout
+your participation</span></p>
+<p><b>Questions/Concerns </b></p>
+<p>If you have any further questions or want clarification regarding this research and/or your participation, please contact:
+</p>
+<p>Dr. Tunde Ogunfowora </p>
+<p>Human Resources and Organizational Dynamics,</p>
+<p>Haskayne School of Business</p>
+<p>403-220-8352, <a href="mailto:togunfow@ucalgary.ca">togunfow@ucalgary.ca</a>
+</p>
+<p><br>
+If you have any concerns about the way you have been treated as a participant, please contact the Ethics Resource Officer, Research Services, University of Calgary at (403) 210-9863; e-mail
+<a href="mailto:cfreb@ucalgary.ca">cfreb@ucalgary.ca</a>. </p>
+<p>&nbsp;</p>
+<p><em><b><u><span style="background:yellow">You may leave this study at any time -
+<a href="https://www.guidedtrack.com/programs/mlo28n4/run" target="_blank">Withdraw request</a>
+</span></u></b></em></p>
+<p>A copy of this consent form has been given to you to keep for your records and reference. The investigator has kept a copy of the consent form.</p>
+</div>
+<br/>
+<form method="post" action="./accept-tos">
+
+<input type="radio" name="agree" value="1" checked="1">I agree that you may use my personal information collected in this study to contact me to participate in future studies as described above.</input><br/><br/>
+<input type="radio" name="agree" value="0">I DO NOT agree that you may use my personal information collected in this study to contact me to participate in future studies as described above.</input>
+<br/>
+
+<input type="hidden" name="redirect" value="{{{redirect}}}" />
+<input type="submit" name="submit" id="submit" />
+</form>
+
+</div>
+</div>
+
+<div id="alert-mask" class="alert-mask"></div>
+
+<div id="alert-alert" class="alert-alert">
+<div id="status">
+</div>
+<button type="button" class="alert-button" onclick="javascript:hide_alert();">OK</button>
+</div>
+
+<script type="text/javascript" src="js/retina.min.js"></script>
+</body>
+</html>
+

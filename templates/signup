@@ -1,0 +1,27 @@
+<html>
+<head>
+</script>
+<title>Sign Up</title>
+</head>
+<div class="signup-signup">
+<form id="signup-form" action="signup" method="post">
+<input type="text" name="username" id="username" value="{{username}}" placeholder="Chosen username" />{{{username-error}}}
+<br/>
+<input type="password" name="password" id="password" value="{{password}}" placeholder="Password" />{{{password-error}}}
+<br/>
+<input type="email" name="email" id="email" value="{{email}}" placeholder="Your email address" />
+<br/>
+<input type="text" name="realname" id="realname" value="{{realname}}" placeholder="Your name" />
+<br/>
+<input type="number" name="ucid" id="ucid" value="{{ucid}}" placeholder="Your UC id" />{{{ucid-error}}}
+<br/>
+<input type="hidden" name="redirect" id="redirect" value="{{redirect}}" />
+<button type="submit" class="signup-submit">Sign up</button>
+</form>
+</div>
+
+<div id="status">
+</div>
+</body>
+</html>
+

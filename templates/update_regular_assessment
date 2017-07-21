@@ -1,0 +1,102 @@
+<form id="regular_form" action="assessment-update" method="post" accept-charset="UTF-8">
+
+  <h2>Assessment name</h2>
+  <input type="text" value="{{{name}}}" id="name" name="name" /></td>
+
+  <h2>Introduction</h2>
+  <textarea id="introduction" name="introduction" rows="10" cols="80" wrap="hard">{{{introduction}}}</textarea>
+
+  <h2>Summary heading</h2>
+  <textarea id="summary" name="summary" rows="10" cols="80" wrap="hard">{{{summary}}}</textarea>
+
+  <h2>Summary footer</h2>
+  <textarea id="summary2" name="summary2" rows="10" cols="80" wrap="hard">{{{summary2}}}</textarea>
+
+  <hr />
+
+  <h2>Dimensions</h2>
+  <table>
+
+    {{#dimensions}}
+    <tr>
+      <td>Name:</td>
+      <td><input type="text" value="{{{name}}}" id="dn{{dimension_id}}" name="dn{{dimension_id}}" /></td>
+      <td/>
+    </tr>
+    <tr>
+      <td>Code:</td>
+      <td><input type="text" value="{{{code}}}" id="dc{{dimension_id}}" name="dc{{dimension_id}}" /></td>
+      <td/>
+    </tr>
+    <tr>
+      <td>Summary:</td>
+      <td><textarea id="ds{{dimension_id}}" name="ds{{dimension_id}}" rows="10" cols="80" wrap="hard">{{{summary}}}</textarea></td>
+      <td style="vertical-align:top;"><button type="button" onclick="confirm_delete_dimension({{dimension_id}})">Delete</button></td>
+    </tr>
+    <tr><td>&nbsp;</td></tr>
+    {{/dimensions}}
+    <tr>
+      <td style="vertical-align:top;"><button type="button" onclick="confirm_add_dimension()">Add New</button></td>
+    </tr>
+  </table>
+
+  <hr />
+
+  <h2>Questions</h2>
+    <div class="questions-container">
+      <div class="question-header-row" style="width:{{{row_width}}}px;">
+        <div class="question-header-question">Question</div>
+        <div class="question-header-dimension-container">
+        {{#dimensions}}<div class="question-header-dimension"><div class="question-header-dimension-label">{{{name}}}</div></div>{{/dimensions}}
+        </div>
+        <div class="question-header-actions">Actions</div>
+      </div>
+      <div class="question-list-container" style="width:{{{row_width}}}px;">
+    {{#questions}}
+    <div class="question-list-row">
+      <div class="question-list-question">
+      <div class="question-list-question-number">{{{question_number}}}.</div>
+      <div class="question-list-question-and-type">
+      <input type="text" class="question-list-question" value="{{{question_text}}}" id="qt{{question_id}}" name="qt{{question_id}}" />
+        <br/>
+        <select class="answer-type" id="qat{{question_id}}" name="qat{{question_id}}">
+          {{#answer_type_list}}
+          <option value="{{type_id}}"{{selected_or_nothing}}>{{name}}</option>
+          {{/answer_type_list}}
+        </select>
+      </div>
+      </div>
+      <div class="question-list-dimension-container">
+      {{#dimensions}}<div class="question-list-dimension"><button type="button" id="q{{question_id}}d{{dimension_id}}" name="q{{question_id}}d{{dimension_id}}" class="dimension" onclick="javascript:dimension(this);" value="{{{value}}}">{{{option}}}</button></div>{{/dimensions}}
+      </div>
+      <div class="question-list-actions" style="vertical-align:top;"><button type="button" onclick="confirm_delete_question({{question_id}})">Delete</button></div>
+
+    </div>
+    {{/questions}}
+      </div>
+    </div>
+    </div>
+    <div>
+      <div style="vertical-align:top;"><button type="button" onclick="confirm_add_question()">Add New</button></div>
+    </div>
+</div>
+
+
+
+  <pre>
+    {{{debug}}}
+  </pre>
+  <input type="hidden" id="a" name="a" value="{{a}}" />
+  <input type="hidden" id="assessment_type" name="assessment_type" value="1" />
+  <input type="hidden" id="magic" name="magic" value="{{magic}}" />
+  <input type="hidden" id="utf8" name="utf8" value="&#x2713;" />
+  <button type="submit" class="questionnaire-submit">Save</button>
+</form>
+
+<div id="alert-mask" class="alert-mask"></div>
+<div id="alert-alert" class="alert-alert">
+  <div id="alert-message"></div>
+  <button id="alert-confirm" type="button" class="alert-button1" onclick="javascript:do_delete_dimension();">Confirm</button>
+  <button id="alert-cancel" type="button" class="alert-button2" onclick="javascript:hide_alert();">Cancel</button>
+</div>
+

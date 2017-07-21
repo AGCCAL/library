@@ -1,0 +1,102 @@
+<link rel="stylesheet" href="css/settings.css" />
+
+<div class="banner">
+<a href="./"><img src="img/logo.png" class="logo" /></a>
+<div class="dashboard"><a href="./">DASHBOARD</a></div>
+<div class="settings"><span id="settings" onclick="javascript:show_settings();">SETTINGS</span></div>
+{{#user_id_is_an_admin}}
+<div class="admin"><a href="./admin">ADMIN</a></div>
+{{/user_id_is_an_admin}}
+<a href="./logout" class="logout"><div class="logout"><div class="logout-centre">LOGOUT</div></div></a>
+
+</div>
+
+{{#user_id_is_an_admin}}
+<link rel="stylesheet" href="css/admin.css" />
+<div class="logged-in-admins" id="logged_in_admins"></div>
+<script type="text/javascript" src="js/admin.js"></script>
+{{/user_id_is_an_admin}}
+
+<div class="settings-mask" id="settings-mask"></div>
+<div class="settings-settings" id="settings-settings">
+<form id="settings-form" action="update-settings" method="post">
+
+<table width="100%" cols="6">
+<tr>
+<td width="16.67%" class="heading">
+<h1>Settings</h1>
+</td>
+<td width="16.67%" />
+<td width="16.67%" />
+<td width="16.67%" />
+<td width="16.67%" />
+<td width="16.67%" />
+</tr>
+<tr>
+<td class="prompt">
+Real name
+</td>
+<td colspan="4" class="input">
+<input type="text" name="realname" id="realname" value="{{real_name}}" placeholder="Your name" class="settings" />
+</td>
+</tr>
+<tr>
+<td class="prompt">
+Email address
+</td>
+<td colspan="4" class="input">
+<input type="email" name="email" id="email" value="{{email}}" placeholder="Your email address" class="settings" />
+</td>
+</tr>
+<tr>
+<td class="prompt">
+UC ID
+</td>
+<td colspan="4" class="input">
+<input type="number" name="ucid" id="ucid" value="{{ucid}}" placeholder="Your UC id" class="settings" />
+</td>
+</tr>
+<tr>
+<td class="prompt">
+Old password
+</td>
+<td colspan="4" class="input">
+<input type="password" name="old" id="old" value="" placeholder="Enter your old password if you want to change it" class="settings" />
+</td>
+</tr>
+<tr>
+<td class="prompt">
+New password
+</td>
+<td colspan="4" class="input">
+<input type="password" name="new" id="new" value="" placeholder="Enter your new password if you want to change it" class="settings" />
+</td>
+</tr>
+<tr>
+<td class="prompt">
+Repeat password
+</td>
+<td colspan="4" class="input">
+<input type="password" name="repeat" id="repeat" value="" placeholder="Enter your new password again if you want to change it" class="settings" />
+</td>
+</tr>
+<tr>
+<td />
+<td />
+<td colspan="4"><div id="settings-status">&nbsp;</div></td>
+</tr>
+<tr>
+<td />
+<td />
+<td class="remember">
+<button type="button" class="login-submit" onclick="javascript:restore_settings();">CANCEL</button>
+</td>
+<td class="dont">
+<button type="submit" class="login-submit">UPDATE</button>
+</td>
+<td />
+</tr>
+</table>
+</form>
+</div>
+<script type="text/javascript" src="js/settings.js"></script>

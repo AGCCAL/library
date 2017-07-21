@@ -1,0 +1,18 @@
+<html>
+<body>
+<p>
+Hi {{{real_name}}},
+<br/><br/>
+Someone (hopefully you) requested a password reset link. If you did not request
+it, please ignore this email.
+<br/><br/>
+If you do need to recover your password, click <a href="https://www.assessmentgarden.org/recover?token={{token}}">here</a>.
+<br/><br/>
+If you are having problems accessing Assessment Garden, please email <a href="mailto:joan.bassett@haskayne.ucalgary.ca">Joan Bassett</a> at Haskayne.
+<br/><br/>
+Thanks,
+<br/><br/>
+Assessment Garden Admin.
+</p>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<div>
+<h2>Group Invitations</h2>
+The links below can be distributed to users to invite them to the following groups:
+<ul>
+{{#group_names}}
+<li>{{{group_name}}}</li>
+{{/group_names}}
+</ul>
+<h3>General invitation</h3>
+If you just want to invite people to join the groups, send them the following link:
+<ul>
+<li><a href="https://www.assessmentgarden.org/?inv={{invitation_id}}">https://www.assessmentgarden.org/?inv={{invitation_id}}</a></li>
+</ul>
+
+<h3>Assessment-specific invitations</h3>
+If you want to invite people to both join the groups and take a particular assessment, use one of the links below:
+<ul>
+{{#assessments}}
+<li><a href="https://www.assessmentgarden.org/a?a={{assessment_id}}&inv={{invitation_id}}">{{{name}}}</a></li>
+{{/assessments}}
+</ul>
+</div>

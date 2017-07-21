@@ -1,0 +1,180 @@
+<html>
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="css/garden.css" />
+{{#show_create}}
+<link rel="stylesheet" href="css/admin.css" />
+{{/show_create}}
+<link rel="stylesheet" href="css/assessment.css" />
+<link rel="stylesheet" href="css/alert.css" />
+<script type="text/javascript" src="js/assessment.js"></script>
+{{#show_create}}
+<script type="text/javascript" src="js/admin.js"></script>
+<script type="text/javascript" src="js/assessment_admin.js"></script>
+{{/show_create}}
+<script type="text/javascript" src="js/alert.js"></script>
+<title>{{&name}}</title>
+</head>
+<body>
+
+
+{{{banner}}}
+
+<div class="centre">
+<div class="profile">
+
+{{#show_create}}
+<h1>Create a new assessment</h1>
+Click the button to create a new assessment:<br/><button type="button" onclick="javascript:document.location='./assessment-create';">Create assessment</button>
+<br/><br/>
+
+<h1>Create a new answer type</h1>
+Before you create your new assessment, you might want to add a new kind of answer (Likert scale, drop-down list or multiple-choice question). Click below to do that.<br/><button type="button" onclick="javascript:document.location='./answer-type-create';">Create answer type</button>
+<br/><br/>
+
+{{/show_create}}
+
+{{#show_unpublished}}
+<div class="profile-introduction">
+<h1>Un-published assessments</h1>
+<p>
+The assessments in the list below are in an "un-published" state. You can modify them as you like, and publish them when you're finished.
+</p>
+<table border="0" width = "100%">
+<tr><th>Name</th></tr>
+{{#unpublished}}
+<tr><td><a href="./a?a={{a}}">{{{name}}}</a></td></tr>
+{{/unpublished}}
+</table>
+</div>
+{{/show_unpublished}}
+
+
+{{#show_published}}
+<div class="profile-introduction">
+<h1>Published assessments</h1>
+<p>
+You can modify the introduction and summary text of any assessment in this list. However, if you make any changes to the questions themselves, it will result in the assessment being archived and a new version of it being created in an "un-published" state.
+</p>
+<table border="0" width = "100%">
+<tr><th>Name</th></tr>
+{{#published}}
+<tr><td><a href="./a?a={{a}}">{{{name}}}</a></td></tr>
+{{/published}}
+</table>
+</div>
+{{/show_published}}
+
+{{#show_archived}}
+<div class="profile-introduction">
+<h1>Archived assessments</h1>
+<p>
+The assessments below are archived. Users cannot take these assessments, and they're shown for reference only.
+</p>
+<table border="0" width = "100%">
+<tr><th>Name</th></tr>
+{{#archived}}
+<tr><td><a href="./a?a={{a}}">{{{name}}}</a></td></tr>
+{{/archived}}
+</table>
+</div>
+{{/show_archived}}
+
+{{^show_create}}
+<h1>Welcome to Assessment Garden!</h1>
+<p>
+  Awareness of yourself is an essential first step in growth and development &mdash; complete these assessments to help you identify which strengths and preferences to enhance, and which challenges to neutralize.
+</p>
+
+{{/show_create}}
+
+{{#show_in_progress}}
+<div class="profile-introduction">
+<h1>Assessments in-progress</h1>
+<p>
+You started these assessments, but didn't finish them. You could do that now - why wait?
+</p>
+<table border="0" width = "100%">
+<tr><th>Name</th><th class="rightcolumn">Date started</th></tr>
+{{#in_progress}}
+<tr><td><a href="./a?instance_id={{instance_id}}">{{{name}}}</a></td><td class="rightcolumn date">{{date}}</td></tr>
+{{/in_progress}}
+</table>
+</div>
+{{/show_in_progress}}
+
+{{#show_available}}
+<div class="profile-introduction">
+<h1>Available assessments</h1>
+<p>
+These are assessments which have been made available to you.  You can re-take them as many times as you like.<br />
+Note:
+<ul>
+<li>There are no right or wrong answers.  Answering honestly will provide you with better information.</li>
+<li>You are the only person who will see your results in a manner that is directly tied to you.  <b>Researchers who are reviewing the results do not have access to your identifying information.</b></li>
+<li>If you are interrupted while completing any of the assessments, you will be able to return later to the point where you left off.</li>
+<li>You will receive feedback immediately upon completing each assessment.</li>
+</ul>
+</p>
+<table border="0" width = "100%">
+<tr><th>Name</th></tr>
+{{#available}}
+<tr><td><a href="./a?a={{a}}">{{{name}}}</a></td></tr>
+{{/available}}
+</table>
+</div>
+{{/show_available}}
+
+{{#show_historic}}
+<div class="profile-introduction">
+<h1>Past assessments</h1>
+<p>
+These are assessments you&apos;ve already completed. You can review them, but can&apos;t change the answers you gave.
+</p>
+<table border="0" width = "100%">
+<tr><th>Name</th><th class="rightcolumn">Date completed</th><th class="rightcolumn">Actions</th></tr>
+{{#historic}}
+<tr><td><a href="./a?instance_id={{instance_id}}">{{{name}}}</a></td><td class="rightcolumn date">{{date}}</td><td class="rightcolumn"><button type="button" onclick="javascript:email_assessment('{{instance_id}}', '{{{name}}}');">Email</button></td></tr>
+{{/historic}}
+</table>
+</div>
+{{/show_historic}}
+
+{{#show_admin_groups}}
+<div class="profile-introduction">
+<h1>Create a new group</h1>
+Click the button to create a new group: <button type="button" onclick="javascript:document.location='./group-create';">Create group</button>
+<h1>Invite users to groups</h1>
+Click the button to create a group invitation: <button type="button" onclick="javascript:document.location='./group-invitation-create';">Create invitation</button>
+
+<h1>Group admin</h1>
+<p>
+These are existing groups. Click the links below to modify them.
+</p>
+<table border="0" width = "100%">
+{{#admin_groups}}
+  <tr><td><a href="./group-modify?g={{g}}">{{{name}}}</a></td></tr>
+{{/admin_groups}}
+</table>
+</div>
+{{/show_admin_groups}}
+
+</div>
+<br/><br/>
+</div>
+
+
+<div id="alert-mask" class="alert-mask"></div>
+
+<div id="alert-alert" class="alert-alert">
+<div id="status">
+</div>
+<button type="button" class="alert-button" onclick="javascript:hide_alert();">OK</button>
+</div>
+
+<script type="text/javascript" src="js/retina.min.js"></script>
+<script type="text/javascript" src="js/profile.js"></script>
+
+</body>
+</html>
+

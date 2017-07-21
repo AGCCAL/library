@@ -1,0 +1,59 @@
+<html>
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="css/garden.css" />
+<link rel="stylesheet" href="css/login.css" />
+<script type="text/javascript" src="js/login.js"></script>
+<title>Forgot your password?</title>
+</head>
+<body>
+
+<div class="banner">
+<a href="./"><img src="img/logo.png" class="logo" /></a>
+</div>
+
+
+<div class="centre">
+
+<div class="login-forgot">
+<form id="forgot-form" action="forgot" method="post">
+
+<table width="100%" cols="6">
+<tr>
+<td width="16.67%" />
+<td width="16.67%" class="heading">
+<h1>Forgot your password?</h1>
+</td>
+<td width="16.67%" />
+<td width="16.67%" />
+<td width="16.67%" />
+<td width="16.67%" />
+</tr>
+<tr>
+<td />
+<td class="prompt">
+Email or username
+</td>
+<td colspan="2" class="input">
+<input type="text" name="user" id="user" value="" placeholder="Username or email" />
+</td>
+</tr>
+<tr>
+<td colspan="2" />
+<td class="remember">
+<button type="submit" class="login-submit">RESET</button>
+</td>
+<td colspan="3"/>
+</tr>
+</table>
+</form>
+</div>
+
+<div id="status">
+</div>
+</div>
+<script type="text/javascript" src="js/retina.min.js"></script>
+<script type="text/javascript" src="js/alert.js"></script>
+</body>
+</html>
+

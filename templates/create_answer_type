@@ -1,0 +1,69 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="css/garden.css" />
+    <link rel="stylesheet" href="css/admin.css" />
+    <link rel="stylesheet" href="css/assessment_admin.css" />
+    <link rel="stylesheet" href="css/alert.css" />
+    <script type="text/javascript" src="js/admin.js"></script>
+    <script type="text/javascript" src="js/assessment_admin.js"></script>
+    <script type="text/javascript" src="js/alert.js"></script>
+    <title>Create a new answer type</title>
+  </head>
+  <body onload="javascript:assessment_admin_on_load();">
+
+    {{{banner}}}
+
+    <div class="centre">
+      <div class="questionnaire">
+        <div class="questionnaire-introduction">
+          <h1>Create a new answer type</h1>
+        </div>
+
+        <div id="questionnaire-submit">
+
+          <div id="regular">
+            <form id="answer_type_form" action="answer-type-create" method="post" accept-charset="UTF-8">
+              <p>
+              Enter the name of the answer type. This is how it will appear to administrators who create assessments.
+              </p>
+              <input type="text" name="name" placeholder="99-step likert scale" style="width:50em;"></input>
+              <p>
+              Select the overall class of your new answer type. Note:
+              <ul>
+                <li>Only Likert-type answers can be applied to assessment dimensions.</li>
+                <li>Multiple-choice lists can have a maximum of 50 options.</li>
+              </ul>
+              </p>
+              <select class="answer-type" id="super_type" name="super_type">
+              {{#super_types}}
+              <option value="{{super_type_id}}"{{selected_or_nothing}}>{{name}}</option>
+              {{/super_types}}
+              </select>
+
+              <p>
+              Enter the possible values in the next box, one per line. If you've prepared them elsewhere, you can paste them in. Options will be displayed in the order you enter them here.
+              </p>
+              <textarea name="options" wrap="hard"></textarea>
+
+              <br/>
+              <button type="submit" class="questionnaire-submit">Submit</button>
+
+              <input type="hidden" id="magic" name="magic" value="{{magic}}">
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="alert-mask" class="alert-mask"></div>
+      <div id="alert-alert" class="alert-alert">
+        <div id="alert-message"></div>
+        <button id="alert-cancel" type="button" class="alert-button" onclick="javascript:hide_alert();">OK</button>
+      </div>
+
+    <script type="text/javascript" src="js/retina.min.js"></script>
+  </body>
+</html>
+

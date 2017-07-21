@@ -1,0 +1,35 @@
+<div class="questionnaire">
+  <div class="questionnaire-introduction">
+    <h2>{{&name}}</h2>
+    <p>
+      {{&introduction}}
+    </p>
+  </div>
+  <div class="questionnaire-body">
+    {{#questions}}
+    <div class="qa">
+      <div class="question">
+        <div class="question-number">{{question_number}}</div>
+        <div class="question_text">{{&question_text}}</div>
+      </div>
+      <div class="answer">
+        {{#type_likert}}
+        <input type="hidden" id="a{{assessment_id}}_{{question_id}}" name="a{{assessment_id}}_{{question_id}}" value=""/>
+        {{#answer_steps}}
+        <div class="answer-option-container">
+          <div id="a{{assessment_id}}_{{question_id}}_{{step_id}}" {{{onmouseover}}} {{{onmouseout}}} {{{onclick}}} class="answer-option{{selected_or_nothing}}"></div>
+          <div id="at{{assessment_id}}_{{question_id}}_{{step_id}}" {{{onmouseover}}} {{{onmouseout}}} {{{onclick}}} class="answer-option-text{{selected_or_nothing}}">{{name}}</div>
+        </div>
+        {{/answer_steps}}
+        {{/type_likert}}    
+        {{#type_text}}
+        <input type="text" id="a{{assessment_id}}_{{question_id}}" name="a{{assessment_id}}_{{question_id}}" value="{{answer_text}}"/>
+        {{/type_text}}    
+        {{#type_textarea}}
+        <textarea id="a{{assessment_id}}_{{question_id}}" name="a{{assessment_id}}_{{question_id}}" wrap="hard">{{answer_text}}</textarea>
+        {{/type_textarea}}
+      </div>
+    </div>
+    {{/questions}}
+  </div>
+</div>

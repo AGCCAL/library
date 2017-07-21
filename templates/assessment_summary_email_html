@@ -1,0 +1,25 @@
+<html>
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="https://www.assessmentgarden.org/css/garden.css" />
+<link rel="stylesheet" href="https://www.assessmentgarden.org/css/assessment.css" />
+<title>{{&name}}</title>
+</head>
+<body style="background:white;color:black;">
+
+<div class="banner">
+<img src="https://www.assessmentgarden.org/img/logo@2x.png" class="logo" />
+</div>
+<p style="text-align:right;font-size:8px;margin-right:10px;">
+{{{instance_id}}}
+</p>
+<div style="margin-top:30px; width:80%; margin-left:10%; margin-right:10%;">
+<p>
+<b>Name:</b> {{{real_name}}}<br/>
+<b>Assessment:</b> {{{assessment_name}}}<br/>
+<b>Completion date:</b> {{{completion_date}}}<br/>
+</p>
+{{{summary}}}
+</div>
+</body>
+</html>

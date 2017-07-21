@@ -1,0 +1,198 @@
+<html>
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="css/garden.css" />
+<link rel="stylesheet" href="css/alert.css" />
+<link rel="stylesheet" href="css/login.css" />
+<title>{{&name}}</title>
+</head>
+<body>
+
+<div class="banner">
+<a href="./"><img src="img/logo.png" class="logo" /></a>
+</div>
+
+
+<div class="centre">
+
+
+<div class="login-login" id="login-login">
+<form id="login-form" action="do_login" method="post">
+<input type="hidden" name="redirect" id="redirect" value="{{redirect}}" />
+
+<table width="100%" cols="6">
+<tr>
+<td width="16.67%" />
+<td width="16.67%" class="heading">
+<h1>Login</h1>
+</td>
+<td width="16.67%" />
+<td width="16.67%" />
+<td width="16.67%" />
+<td width="16.67%" />
+</tr>
+<tr>
+<td />
+<td class="prompt">
+Email or username
+</td>
+<td colspan="2" class="input">
+<input type="text" name="username" id="username" value="" placeholder="Username or email" />
+</td>
+</tr>
+<tr>
+<td />
+<td class="prompt">
+Password
+</td>
+<td colspan="2" class="input">
+<input type="password" name="password" id="password" value="" placeholder="Password" />
+</td>
+<td class="remember"><div  style="margin-left: 15px;"><span id="forgot" onclick="javascript:forgot_password();">Forgot it?</span></div></td>
+</tr>
+<tr>
+<td />
+<td />
+<td class="remember">
+<input type="checkbox" name="remember" id="remember" />
+<label for="remember">Remember me</label>
+</td>
+<td class="dont">
+Don't have an account?
+</td>
+<td />
+</tr>
+<tr>
+<td />
+<td />
+<td class="remember">
+<button type="submit" class="login-submit">LOGIN</button>
+</td>
+<td class="dont">
+<button type="button" class="login-submit" onclick="javascript:show_signup();">CREATE</button>
+</td>
+<td />
+</tr>
+</table>
+</form>
+</div>
+
+
+<div class="login-signup" id="login-signup">
+<form id="signup-form" action="signup" method="post">
+<input type="hidden" name="redirect" id="redirect" value="{{redirect}}" />
+<table width="100%" cols="6">
+<tr>
+<td width="16.67%" />
+<td width="16.67%" class="heading">
+<h1>Sign up</h1>
+</td>
+<td width="16.67%" />
+<td width="16.67%" />
+<td width="16.67%" />
+<td width="16.67%" />
+</tr>
+<tr>
+<td />
+<td class="prompt">
+Username
+</td>
+<td colspan="2" class="input">
+<input type="text" name="username" id="username" value="" placeholder="Chosen username" />
+</td>
+</tr>
+<tr>
+<td />
+<td class="prompt">
+Real name
+</td>
+<td colspan="2" class="input">
+<input type="text" name="realname" id="realname" value="" placeholder="Your name" />
+</td>
+</tr>
+<tr>
+<td />
+<td class="prompt">
+Email address
+</td>
+<td colspan="2" class="input">
+<input type="email" name="email" id="email" value="" placeholder="Your email address" />
+</td>
+</tr>
+<tr>
+<td />
+<td class="prompt">
+Repeat email address
+</td>
+<td colspan="2" class="input">
+<input type="email" name="remail" id="remail" value="" placeholder="Your email address again" />
+</td>
+</tr>
+<tr>
+<td />
+<td class="prompt">
+UC ID
+</td>
+<td colspan="2" class="input">
+<input type="number" name="ucid" id="ucid" value="" placeholder="Your UC id" />
+</td>
+</tr>
+<tr>
+<td />
+<td class="prompt">
+Password
+</td>
+<td colspan="2" class="input">
+<input type="password" name="password" id="password" value="" placeholder="Password" />
+</td>
+</tr>
+<tr>
+<td />
+<td class="prompt">
+Repeat password
+</td>
+<td colspan="2" class="input">
+<input type="password" name="rpassword" id="rpassword" value="" placeholder="Password again" />
+</td>
+</tr>
+<tr>
+<td />
+<td />
+<td class="remember" style="margin-left:10px;padding-left:10px;">
+Create your account
+</td>
+<td class="dont">
+Already have an account?
+</td>
+<td />
+</tr>
+<tr>
+<td />
+<td />
+<td class="remember">
+<button type="submit" class="login-submit">CREATE</button>
+</td>
+<td class="dont">
+<button type="button" class="login-submit" onclick="javascript:show_login();">LOGIN</button>
+</td>
+<td />
+</tr>
+</table>
+</form>
+</div>
+
+<div id="alert-mask" class="alert-mask"></div>
+
+<div id="alert-alert" class="alert-alert">
+<div id="status">
+</div>
+<button type="button" class="alert-button" onclick="javascript:hide_alert();">OK</button>
+</div>
+
+</div>
+<script type="text/javascript" src="js/login.js"></script>
+<script type="text/javascript" src="js/alert.js"></script>
+<script type="text/javascript" src="js/retina.min.js"></script>
+</body>
+</html>
+

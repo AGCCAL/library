@@ -1,0 +1,115 @@
+<html>
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="css/garden.css" />
+<link rel="stylesheet" href="css/assessment.css" />
+<script type="text/javascript" src="js/assessment.js"></script>
+{{#show_admin}}
+<link rel="stylesheet" href="css/admin.css" />
+<link rel="stylesheet" href="css/assessment_admin.css" />
+<script type="text/javascript" src="js/admin.js"></script>
+<script type="text/javascript" src="js/assessment_admin.js"></script>
+{{/show_admin}}
+
+<title>{{&name}}</title>
+</head>
+<body onload="javascript:on_load();">
+
+{{{banner}}}
+
+<div class="centre">
+<form id="form" action="assessment-submit" method="post" target="result-iframe">
+
+<div class="questionnaire">
+<div class="questionnaire-introduction">
+<h1>{{&name}}</h1>
+<br/>
+{{&show_state}}
+<br/>
+{{#show_modify}}
+<button type="button" onclick="javascript:modify_assessment({{assessment_id}});">Modify</button>&nbsp;
+{{/show_modify}}
+{{#show_publish}}
+<button type="button" onclick="javascript:publish_assessment({{assessment_id}}, '{{{name}}}');">Publish</button>&nbsp;
+{{/show_publish}}
+{{#show_groups}}
+<button type="button" onclick="javascript:assessment_groups({{assessment_id}}, '{{{name}}}');">Groups</button>&nbsp;
+{{/show_groups}}
+{{#show_archive}}
+<button type="button" onclick="javascript:archive_assessment({{assessment_id}}, '{{{name}}}');">Archive</button>&nbsp;
+{{/show_archive}}
+{{#show_duplicate}}
+<button type="button" onclick="javascript:duplicate_assessment({{assessment_id}}, '{{{name}}}');">Duplicate</button>&nbsp;
+{{/show_duplicate}}
+{{#show_export}}
+<button type="button" onclick="javascript:export_assessment({{assessment_id}}, '{{{name}}}');">Export</button>&nbsp;
+{{/show_export}}
+
+<p>
+{{&introduction}}
+</p>
+</div>
+<div class="questionnaire-body">
+{{#questions}}
+<div class="qa">
+  <div class="question">
+    <div class="question-number">{{question_number}}</div>
+    <div class="question-text">{{&question_text}}</div>
+  </div>
+{{^completed}}
+  <div class="answer">
+    {{#type_likert}}
+    <input type="hidden" id="a{{assessment_id}}_{{question_id}}" name="a{{assessment_id}}_{{question_id}}" value=""/>
+    {{#answer_steps}}
+    <div class="answer-option-container">
+      <div id="a{{assessment_id}}_{{question_id}}_{{step_id}}" {{{onmouseover}}} {{{onmouseout}}} {{{onclick}}} class="answer-option{{selected_or_nothing}}"></div>
+      <div id="at{{assessment_id}}_{{question_id}}_{{step_id}}" {{{onmouseover}}} {{{onmouseout}}} {{{onclick}}} class="answer-option-text{{selected_or_nothing}}">{{name}}</div>
+    </div>
+    {{/answer_steps}}
+    {{/type_likert}}
+    {{#type_listbox}}
+    <select id="a{{assessment_id}}_{{question_id}}" name="a{{assessment_id}}_{{question_id}}" class="answer-type" {{{onchange}}}>
+    {{#answer_steps}}
+    <option value="{{step_id}}" {{selected_or_nothing}}>{{name}}</option>
+    {{/answer_steps}}
+    </select>
+    {{/type_listbox}}
+    {{#type_text}}
+    <input type="text" id="a{{assessment_id}}_{{question_id}}" name="a{{assessment_id}}_{{question_id}}" value="{{answer_text}}" {{{onblur}}} />
+    {{/type_text}}    
+    {{#type_textarea}}
+    <textarea id="a{{assessment_id}}_{{question_id}}" name="a{{assessment_id}}_{{question_id}}" wrap="hard" {{{onblur}}} >{{answer_text}}</textarea>
+    {{/type_textarea}}
+    {{#type_multichoice}}
+    <input type="hidden" id="a{{assessment_id}}_{{question_id}}" name="a{{assessment_id}}_{{question_id}}" value=""/>
+    {{#answer_steps}}
+    <label><input type="checkbox" id="a{{assessment_id}}_{{question_id}}_{{step_id}}" name="a{{assessment_id}}_{{question_id}}_{{step_id}}" class="answer-type" {{{onchange}}} {{selected_or_nothing}} />{{name}}</label><br/>
+    {{/answer_steps}}
+    </select>
+    {{/type_multichoice}}
+    
+    
+  </div>
+{{/completed}}
+</div>
+{{/questions}}
+</div>
+
+{{#completed}}
+{{{summary}}}
+{{/completed}}
+
+{{^completed}}
+<div class="questionnaire-submit" id="questionnaire-submit">
+<input type="hidden" id="magic" name="magic" value="{{magic}}">
+<button type="submit" class="questionnaire-submit">Submit</button>
+</div>
+{{/completed}}
+</div>
+
+</form>
+</div>
+<script type="text/javascript" src="js/retina.min.js"></script>
+</body>
+</html>
+

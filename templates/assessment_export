@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="css/garden.css" />
+    <link rel="stylesheet" href="css/admin.css" />
+    <link rel="stylesheet" href="css/assessment_admin.css" />
+    <link rel="stylesheet" href="css/alert.css" />
+    <script type="text/javascript" src="js/admin.js"></script>
+    <script type="text/javascript" src="js/assessment_admin.js"></script>
+    <script type="text/javascript" src="js/alert.js"></script>
+    <title>Export Assessment Data — {{{name}}}</title>
+  </head>
+  <body onload="javascript:assessment_admin_on_load();">
+
+    {{{banner}}}
+
+    <div class="centre">
+      <div class="questionnaire">
+        <div class="questionnaire-introduction">
+          <h1>Export Assessment Data — {{{name}}}</h1>
+        </div>
+
+        <div id="questionnaire-submit">
+
+          <div id="regular">
+            <form id="export_form" action="assessment-export-csv" method="post" accept-charset="UTF-8">
+              <p>
+              By default, the results are anonymized. Check the box below to include identifying data for users who took the assessments (name and UCID). By checking the box and including user identification details, you agree that all required ethics approvals have been obtained.
+              </p>
+              <input type="checkbox" id="u" name="u">Include user data</input>
+
+              <br/><br/>
+              <button type="submit" class="questionnaire-submit">Export</button>
+
+              <input type="hidden" id="magic" name="magic" value="{{magic}}">
+              <input type="hidden" id="a" name="a" value="{{a}}">
+              <input type="hidden" id="x" name="x" value="x">
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="alert-mask" class="alert-mask"></div>
+      <div id="alert-alert" class="alert-alert">
+        <div id="alert-message"></div>
+        <button id="alert-cancel" type="button" class="alert-button" onclick="javascript:hide_alert();">OK</button>
+      </div>
+
+    <script type="text/javascript" src="js/retina.min.js"></script>
+  </body>
+</html>
+

@@ -1,0 +1,148 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="css/garden.css" />
+    <link rel="stylesheet" href="css/admin.css" />
+    <link rel="stylesheet" href="css/assessment_admin.css" />
+    <link rel="stylesheet" href="css/alert.css" />
+    <script type="text/javascript" src="js/alert.js"></script>
+    <title>Create a new assessment</title>
+  </head>
+  <body>
+
+    {{{banner}}}
+
+    <div class="centre">
+      <div class="questionnaire">
+        <div class="questionnaire-introduction">
+          <h1>Create a new assessment</h1>
+        </div>
+
+        <div id="questionnaire-submit">
+
+          <p>This will be a :
+          <button type="button"  onclick="javascript:show_regular();">REGULAR ASSESSMENT</button>
+          <button type="button"  onclick="javascript:show_combined();">COMBINED ASSESSMENT</button>
+          </p>
+
+          <div id="regular">
+            <form id="regular_form" action="assessment-create" method="post" accept-charset="UTF-8">
+              <input type="hidden" name="assessment_type" value="1" />
+              <p>
+              Enter the name of the assessment. This is how it will appear on users' assessment profiles.
+              </p>
+              <input type="text" name="name" placeholder="Goal regulation — prevention and promotion characteristics" style="width:50em;"></input>
+
+              <p>
+              Enter the introduction to the assessment in the box below. It supports Markdown formatting for rich text.
+              </p>
+              <textarea name="introduction" wrap="hard" placeholder="Enter the introduction to the assessment here. This field supports Markdown."></textarea>
+
+
+              <p>
+              Usually, all questions in an assessment will have the same type of answers (e.g. they'll all be 5-point Likert scales). Use the following selector to choose the type that matches most questions in this assessment. You'll get the opportunity to refine it later.
+              </p>
+              <select name="default_answer_type">
+                {{#answer_types}}
+                <option value="{{type_id}}">{{{name}}}</option>
+                {{/answer_types}}
+              </select>
+
+              <p>
+
+              Assessments are scored on a set of different <em>dimensions</em>. In the box below, enter the names of the dimensions, one per line, as you'd like them to appear to the person taking the assessment.
+              </p>
+              <textarea name="dimensions" wrap="hard"></textarea>
+
+              <p>
+              Enter the questions in the next box, one per line. If you've prepared them elsewhere, you can paste them in.
+              </p>
+              <textarea name="questions" wrap="hard"></textarea>
+
+
+              <p>
+              When the user submits the assessment, some summary text will be shown. If you enter text in the following box, it will be displayed <em>before</em> any dimension-specific summary text.
+              </p>
+              <textarea name="summary" wrap="hard" placeholder="Enter the summary to the assessment here. This field supports Markdown."></textarea>
+
+              <p>
+              The following summary will be shown <em>after</em> the dimension-specific summary text.
+              </p>
+              <textarea name="summary2" wrap="hard" placeholder="Enter the summary to the assessment here. This field supports Markdown."></textarea>
+
+
+
+              <br/>
+              <button type="submit" class="questionnaire-submit">Submit</button>
+
+              <input type="hidden" id="magic" name="magic" value="{{magic}}">
+            </form>
+
+          </div>
+
+          <div id="combined" style="display:none;">
+            <form id="combined_form" action="assessment-create" method="post" accept-charset="UTF-8">
+              <input type="hidden" name="assessment_type" value="2" />
+
+              <p>
+              Enter the name of the assessment. This is how it will appear on users' assessment profiles.
+              </p>
+              <input type="text" name="name" placeholder="Goal regulation — prevention and promotion characteristics" style="width:50em;"></input>
+
+              <p>
+              Enter the introduction to the assessment in the box below. It supports Markdown formatting for rich text.
+              </p>
+              <textarea name="introduction" wrap="hard" placeholder="Enter the introduction to the assessment here. This field supports Markdown."></textarea>
+
+
+
+              <p>
+              Choose the selection and order of sub-assessments which will make up the combined assessment:
+              </p>
+
+              <div class="all-drag-items-headers">
+                  <div class="drag-items-header">Available</div>
+                  <div class="drag-items-header" style="left:50%;">Selected</div>
+              </div>
+              <div class="all-drag-items" id="all_subs">
+                <div class="drag-items-body">
+                  <div id="available_subs" class="available drag-items" ondrop="drop(event, 'subs', 'sub', 'all_subs')" ondragover="allowDrop(event)">
+                    {{#available_subs}}
+                    <div id="sub{{sub_id}}" class="drag-item" ondragstart="drag(event);" draggable="true" ondrop="dropInParent(event, 'subs', 'sub', 'all_subs')" ondragover="allowDrop(event)">{{sub_id}}: {{{sub_name}}}</div>
+                    {{/available_subs}}
+                  </div>
+                  <div id="chosen_subs" class="chosen drag-items" ondrop="drop(event, 'subs', 'sub', 'all_subs')" ondragover="allowDrop(event)">
+                    {{#chosen_subs}}
+                    <div id="sub{{sub_id}}" class="drag-item" ondragstart="drag(event);" draggable="true" ondrop="dropInParent(event, 'subs', 'sub', 'all_subs')" ondragover="allowDrop(event)">{{sub_id}}: {{{sub_name}}}</div>
+                    {{/chosen_subs}}
+                  </div>
+                </div>
+              </div>
+              
+              
+              <div>
+                <p>
+                When the user submits the assessment, some summary text will be shown. If you enter text in the following box, it will be displayed <em>before</em> the sub assessments' summary text.
+                </p>
+                <textarea name="summary" wrap="hard" placeholder="Enter the summary to the assessment here. This field supports Markdown."></textarea>
+              </div>
+              <p>
+              The following summary will be shown <em>after</em> the sub assessments' summary text.
+              </p>
+              <textarea name="summary2" wrap="hard" placeholder="Enter the summary to the assessment here. This field supports Markdown."></textarea>
+              <br/><br/>
+              <button type="submit" class="questionnaire-submit">Submit</button>
+              <br/><br/>
+              
+              <input type="hidden" id="magic" name="magic" value="{{magic}}">
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="js/retina.min.js"></script>
+    <script type="text/javascript" src="js/assessment_admin.js"></script>
+  </body>
+</html>
+
